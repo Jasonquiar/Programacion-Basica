@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ciclos</title>
+    <script type="text/javascript">
+
+var c, t, b;
+
+
+// Una función es como una variable lo que la diferencia es que se ejecuta con parentesis ()
+
+function inicio()
+{
+    // Obtengo los elementos con Id del documento y los asigno como valor a una variable
+    c = document.getElementById("caja");
+    t = document.getElementById("texto");
+    b = document.getElementById("boton");
+
+
+    // Ejemplo de evento, una vez cargada la pagina ella espara iteraciones de los usuarios como clic, pasar por encima(hoover)
+
+    b.addEventListener("click", calcular);
+
+    // NOTA: Explicacion de como se sacan los numeros pares e impared con MOD = % para Javascript
+    // MOD: Numero  residuuo en la division por 2 tradicional 1 = Impar 0 = Par
+    
+    // var residuo;
+    // while(numeros <= 50)
+    // {
+    //     residuo = numeros % 2;
+    //     if(residuo == 0)
+    //     {
+    //         c.innerHTML += " " + numeros;
+    //     }
+    //     numeros++;
+    // }
+}
+
+function calcular()
+{
+    var numero = Number(t.value);
+    var calculo = 1;
+    var n;
+    
+    // while(n <= numero)
+    // {
+    //     calculo = calculo * n;
+    //     n++;
+    // }
+
+    for(n=1; n <= numero; n++)
+    {
+        calculo = calculo * n;
+    }
+    c.innerHTML = "<strong>" + calculo + "</strong>";
+}
+    </script>
+</head>
+<body>
+    <input type="text" id="texto" value="Un número" />
+    <input type="button" id="boton" value="Calcular" /></br>
+    <div id="caja">El resultado despues de presionar el boton calcular aquí!</div>
+    
+    
+    <!-- Importante hacer un js de inicio para cargar los documentos tanto el HTML como js -->
+    <script type="text/javascript">
+    inicio();
+    </script>
+</body>
+</html>|
